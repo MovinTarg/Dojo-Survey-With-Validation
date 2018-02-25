@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Completed Form</title>
+        <link rel="stylesheet" types="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+        <script rel="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div class="info">
+                <h1>Submitted Info</h1>
+                <p>Name: {{name}} </p>
+                <p>Dojo Location: {{location}} </p>
+                <p>Favorite Language: {{language}} </p>
+                <p>Comment: {{comment}} </p>
+            </div>
+        </div>
+    </body>
+</html>

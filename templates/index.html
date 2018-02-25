@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Empty Form</title>
+        <link rel="stylesheet" types="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+        <script rel="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <form action="/completedForm" method="post">
+                <p>Your Name:</p>
+                <input type="text" name="name">
+                <p>Dojo Location:</p>
+                <select name="location">
+                    <option></option>
+                    <option>Chicago</option>
+                    <option>New York</option>
+                    <option>San Fran</option>
+                </select>
+                <p>Favorite Language:</p>
+                <select name="language">
+                    <option></option>
+                    <option>Python</option>
+                    <option>JavaScript</option>
+                    <option>C#</option>
+                </select>
+                <p>Comment (optional)</p>
+                <input class='textarea' type="textarea" name="comment">
+                <input type="submit" value="submit">
+                <br>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </form>
+        </div>
+    </body>
+</html>
